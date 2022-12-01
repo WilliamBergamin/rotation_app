@@ -19,7 +19,9 @@
         "channels:history",
         "chat:write",
         "commands",
-        "chat:write.public"
+        "chat:write.public",
+        "triggers:write",
+        "triggers:read"
       ]
     }
   },
@@ -35,38 +37,74 @@
     "token_rotation_enabled": false
   },
   "functions": {
-    "sample_function": {
-      "title": "Sample function",
-      "description": "A sample function",
+    "setup_function": {
+      "title": "Setup function",
+      "description": "Setup a rotation in a channel",
       "input_parameters": {
-        "properties": {
-          "message": {
-            "type": "string",
-            "description": "Message to be posted"
-          }
-        },
-        "required": [
-          "message"
-        ]
+        "properties": {},
+        "required": []
       },
       "output_parameters": {
         "properties": {
-          "updatedMsg": {
+          "msg": {
             "type": "string",
             "description": "Updated message to be posted"
           }
         },
         "required": [
-          "updatedMsg"
+          "msg"
+        ]
+      }
+    },
+    "rotate_function": {
+      "title": "Rotate function",
+      "description": "Rotate the current user",
+      "input_parameters": {
+        "properties": {},
+        "required": []
+      },
+      "output_parameters": {
+        "properties": {
+          "msg": {
+            "type": "string",
+            "description": "Updated message to be posted"
+          }
+        },
+        "required": [
+          "msg"
+        ]
+      }
+    },
+    "read_function": {
+      "title": "Read function",
+      "description": "Read the triggers",
+      "input_parameters": {
+        "properties": {},
+        "required": []
+      },
+      "output_parameters": {
+        "properties": {
+          "trigger_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "interactivity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "trigger_ids"
         ]
       }
     }
   },
   "types": {},
   "workflows": {
-    "sample_workflow": {
-      "title": "Sample workflow",
-      "description": "A sample workflow",
+    "setup_workflow": {
+      "title": "setup workflow",
+      "description": "Set up a rotation in a channel",
       "input_parameters": {
         "properties": {
           "interactivity": {
@@ -113,17 +151,88 @@
         },
         {
           "id": "1",
-          "function_id": "#/functions/sample_function",
-          "inputs": {
-            "message": "{{steps.0.fields.message}}"
-          }
+          "function_id": "#/functions/setup_function",
+          "inputs": {}
         },
         {
           "id": "2",
           "function_id": "slack#/functions/send_message",
           "inputs": {
             "channel_id": "{{steps.0.fields.channel}}",
-            "message": "{{steps.1.updatedMsg}}"
+            "message": "{{steps.1.msg}}"
+          }
+        }
+      ]
+    },
+    "rotate_workflow": {
+      "title": "rotate workflow",
+      "description": "workflow to rotate the current user",
+      "input_parameters": {
+        "properties": {},
+        "required": []
+      },
+      "steps": [
+        {
+          "id": "0",
+          "function_id": "#/functions/rotate_function",
+          "inputs": {}
+        },
+        {
+          "id": "1",
+          "function_id": "slack#/functions/send_message",
+          "inputs": {
+            "channel_id": "C04DCM1LQH0",
+            "message": "{{steps.0.msg}}"
+          }
+        }
+      ]
+    },
+    "read_workflow": {
+      "title": "read workflow",
+      "description": "read the triggers",
+      "input_parameters": {
+        "properties": {
+          "interactivity": {
+            "type": "slack#/types/interactivity"
+          },
+          "channel": {
+            "type": "slack#/types/channel_id"
+          }
+        },
+        "required": [
+          "interactivity"
+        ]
+      },
+      "steps": [
+        {
+          "id": "0",
+          "function_id": "#/functions/read_function",
+          "inputs": {}
+        },
+        {
+          "id": "1",
+          "function_id": "slack#/functions/open_form",
+          "inputs": {
+            "title": "Delete a trigger",
+            "submit_label": "Delete",
+            "description": "Delete a rotation scheduled trigger",
+            "interactivity": "{{steps.0.interactivity}}",
+            "fields": {
+              "elements": [
+                {
+                  "name": "triggers",
+                  "title": "your triggers",
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": "{{steps.0.trigger_ids}}"
+                  }
+                }
+              ],
+              "required": [
+                "triggers"
+              ]
+            }
           }
         }
       ]

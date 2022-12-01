@@ -1,8 +1,8 @@
 {
     "type": "shortcut",
-    "name": "Sample trigger",
-    "description": "A sample trigger",
-    "workflow": "#/workflows/sample_workflow",
+    "name": "Read trigger",
+    "description": "Read your triggers",
+    "workflow": "#/workflows/read_workflow",
     "inputs": {
         "interactivity": {
             "value": "{{data.interactivity}}"

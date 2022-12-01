@@ -1,0 +1,14 @@
+{
+    "type": "shortcut",
+    "name": "Setup trigger",
+    "description": "Setup a rotation",
+    "workflow": "#/workflows/setup_workflow",
+    "inputs": {
+        "interactivity": {
+            "value": "{{data.interactivity}}"
+        },
+        "channel": {
+            "value": "{{data.channel_id}}"
+        }
+    }
+}

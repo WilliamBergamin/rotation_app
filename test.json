@@ -1,0 +1,873 @@
+{
+    "ok": true,
+    "triggers": [
+        {
+            "id": "Ft04D6H7GPF0",
+            "inputs": {
+                "interactivity": {
+                    "value": "{{data.interactivity}}",
+                    "locked": false,
+                    "hidden": false
+                }
+            },
+            "outputs": {
+                "{{event_timestamp}}": {
+                    "type": "string",
+                    "name": "event_timestamp",
+                    "title": "Time when workflow started",
+                    "is_required": false,
+                    "description": "Time when workflow started"
+                },
+                "{{type}}": {
+                    "type": "string",
+                    "name": "type",
+                    "enum": [
+                        "event",
+                        "shortcut",
+                        "webhook",
+                        "scheduled",
+                        "blockkit"
+                    ],
+                    "title": "Trigger type",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "description": "The type of trigger being tripped"
+                },
+                "{{team_id}}": {
+                    "type": "string",
+                    "name": "team_id",
+                    "title": "Team where this workflow was tripped",
+                    "is_required": true,
+                    "description": "Team where this workflow was tripped"
+                },
+                "{{enterprise_id}}": {
+                    "type": "string",
+                    "name": "enterprise_id",
+                    "title": "Organization where this workflow was tripped",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "nullable": true,
+                    "description": "Organization where this workflow was tripped if the team is part of an organization"
+                }
+            },
+            "available_data": {
+                "{{event_timestamp}}": {
+                    "type": "string",
+                    "name": "event_timestamp",
+                    "title": "Time when workflow started",
+                    "is_required": false,
+                    "description": "Time when workflow started"
+                },
+                "{{type}}": {
+                    "type": "string",
+                    "name": "type",
+                    "enum": [
+                        "event",
+                        "shortcut",
+                        "webhook",
+                        "scheduled",
+                        "blockkit"
+                    ],
+                    "title": "Trigger type",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "description": "The type of trigger being tripped"
+                },
+                "{{team_id}}": {
+                    "type": "string",
+                    "name": "team_id",
+                    "title": "Team where this workflow was tripped",
+                    "is_required": true,
+                    "description": "Team where this workflow was tripped"
+                },
+                "{{enterprise_id}}": {
+                    "type": "string",
+                    "name": "enterprise_id",
+                    "title": "Organization where this workflow was tripped",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "nullable": true,
+                    "description": "Organization where this workflow was tripped if the team is part of an organization"
+                }
+            },
+            "date_created": 1669926167,
+            "date_updated": 1669926167,
+            "type": "scheduled",
+            "schedule": {
+                "start_time": "2022-12-01T20:22:50Z",
+                "timezone": "UTC",
+                "frequency": {
+                    "type": "daily",
+                    "repeats_every": 1440
+                }
+            },
+            "name": "trigger rotate function",
+            "description": "",
+            "workflow": {
+                "id": "Fn04DA45JG3F",
+                "callback_id": "rotate_workflow",
+                "title": "rotate workflow",
+                "description": "workflow to rotate the current user",
+                "type": "workflow",
+                "input_parameters": [],
+                "output_parameters": [],
+                "app_id": "A04D62HNCKG",
+                "app": {
+                    "id": "A04D62HNCKG",
+                    "name": "rotation_app (dev)",
+                    "icons": {
+                        "image_32": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png",
+                        "image_48": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png",
+                        "image_64": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png",
+                        "image_72": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png"
+                    },
+                    "is_workflow_app": false
+                },
+                "date_created": 1669925125,
+                "date_updated": 1669929415,
+                "date_deleted": 0,
+                "workflow_id": "Wf04DRMC5PS5"
+            }
+        },
+        {
+            "id": "Ft04D6KB5F7Y",
+            "inputs": {
+                "interactivity": {
+                    "value": "{{data.interactivity}}",
+                    "locked": false,
+                    "hidden": false
+                }
+            },
+            "outputs": {
+                "{{event_timestamp}}": {
+                    "type": "string",
+                    "name": "event_timestamp",
+                    "title": "Time when workflow started",
+                    "is_required": false,
+                    "description": "Time when workflow started"
+                },
+                "{{type}}": {
+                    "type": "string",
+                    "name": "type",
+                    "enum": [
+                        "event",
+                        "shortcut",
+                        "webhook",
+                        "scheduled",
+                        "blockkit"
+                    ],
+                    "title": "Trigger type",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "description": "The type of trigger being tripped"
+                },
+                "{{team_id}}": {
+                    "type": "string",
+                    "name": "team_id",
+                    "title": "Team where this workflow was tripped",
+                    "is_required": true,
+                    "description": "Team where this workflow was tripped"
+                },
+                "{{enterprise_id}}": {
+                    "type": "string",
+                    "name": "enterprise_id",
+                    "title": "Organization where this workflow was tripped",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "nullable": true,
+                    "description": "Organization where this workflow was tripped if the team is part of an organization"
+                }
+            },
+            "available_data": {
+                "{{event_timestamp}}": {
+                    "type": "string",
+                    "name": "event_timestamp",
+                    "title": "Time when workflow started",
+                    "is_required": false,
+                    "description": "Time when workflow started"
+                },
+                "{{type}}": {
+                    "type": "string",
+                    "name": "type",
+                    "enum": [
+                        "event",
+                        "shortcut",
+                        "webhook",
+                        "scheduled",
+                        "blockkit"
+                    ],
+                    "title": "Trigger type",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "description": "The type of trigger being tripped"
+                },
+                "{{team_id}}": {
+                    "type": "string",
+                    "name": "team_id",
+                    "title": "Team where this workflow was tripped",
+                    "is_required": true,
+                    "description": "Team where this workflow was tripped"
+                },
+                "{{enterprise_id}}": {
+                    "type": "string",
+                    "name": "enterprise_id",
+                    "title": "Organization where this workflow was tripped",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "nullable": true,
+                    "description": "Organization where this workflow was tripped if the team is part of an organization"
+                }
+            },
+            "date_created": 1669926898,
+            "date_updated": 1669926898,
+            "type": "scheduled",
+            "schedule": {
+                "start_time": "2022-12-01T20:35:00Z",
+                "timezone": "Etc/GMT",
+                "frequency": {
+                    "type": "daily",
+                    "repeats_every": 1440
+                }
+            },
+            "name": "trigger rotate function",
+            "description": "",
+            "workflow": {
+                "id": "Fn04DA45JG3F",
+                "callback_id": "rotate_workflow",
+                "title": "rotate workflow",
+                "description": "workflow to rotate the current user",
+                "type": "workflow",
+                "input_parameters": [],
+                "output_parameters": [],
+                "app_id": "A04D62HNCKG",
+                "app": {
+                    "id": "A04D62HNCKG",
+                    "name": "rotation_app (dev)",
+                    "icons": {
+                        "image_32": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png",
+                        "image_48": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png",
+                        "image_64": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png",
+                        "image_72": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png"
+                    },
+                    "is_workflow_app": false
+                },
+                "date_created": 1669925125,
+                "date_updated": 1669929415,
+                "date_deleted": 0,
+                "workflow_id": "Wf04DRMC5PS5"
+            }
+        },
+        {
+            "id": "Ft04D6KQNKGE",
+            "inputs": {
+                "interactivity": {
+                    "value": "{{data.interactivity}}",
+                    "locked": false,
+                    "hidden": false
+                }
+            },
+            "outputs": {
+                "{{event_timestamp}}": {
+                    "type": "string",
+                    "name": "event_timestamp",
+                    "title": "Time when workflow started",
+                    "is_required": false,
+                    "description": "Time when workflow started"
+                },
+                "{{type}}": {
+                    "type": "string",
+                    "name": "type",
+                    "enum": [
+                        "event",
+                        "shortcut",
+                        "webhook",
+                        "scheduled",
+                        "blockkit"
+                    ],
+                    "title": "Trigger type",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "description": "The type of trigger being tripped"
+                },
+                "{{team_id}}": {
+                    "type": "string",
+                    "name": "team_id",
+                    "title": "Team where this workflow was tripped",
+                    "is_required": true,
+                    "description": "Team where this workflow was tripped"
+                },
+                "{{enterprise_id}}": {
+                    "type": "string",
+                    "name": "enterprise_id",
+                    "title": "Organization where this workflow was tripped",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "nullable": true,
+                    "description": "Organization where this workflow was tripped if the team is part of an organization"
+                }
+            },
+            "available_data": {
+                "{{event_timestamp}}": {
+                    "type": "string",
+                    "name": "event_timestamp",
+                    "title": "Time when workflow started",
+                    "is_required": false,
+                    "description": "Time when workflow started"
+                },
+                "{{type}}": {
+                    "type": "string",
+                    "name": "type",
+                    "enum": [
+                        "event",
+                        "shortcut",
+                        "webhook",
+                        "scheduled",
+                        "blockkit"
+                    ],
+                    "title": "Trigger type",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "description": "The type of trigger being tripped"
+                },
+                "{{team_id}}": {
+                    "type": "string",
+                    "name": "team_id",
+                    "title": "Team where this workflow was tripped",
+                    "is_required": true,
+                    "description": "Team where this workflow was tripped"
+                },
+                "{{enterprise_id}}": {
+                    "type": "string",
+                    "name": "enterprise_id",
+                    "title": "Organization where this workflow was tripped",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "nullable": true,
+                    "description": "Organization where this workflow was tripped if the team is part of an organization"
+                }
+            },
+            "date_created": 1669927049,
+            "date_updated": 1669927049,
+            "type": "scheduled",
+            "schedule": {
+                "start_time": "2022-12-01T20:37:32Z",
+                "timezone": "UTC",
+                "frequency": {
+                    "type": "daily",
+                    "repeats_every": 1440
+                }
+            },
+            "name": "trigger rotate function",
+            "description": "",
+            "workflow": {
+                "id": "Fn04DA45JG3F",
+                "callback_id": "rotate_workflow",
+                "title": "rotate workflow",
+                "description": "workflow to rotate the current user",
+                "type": "workflow",
+                "input_parameters": [],
+                "output_parameters": [],
+                "app_id": "A04D62HNCKG",
+                "app": {
+                    "id": "A04D62HNCKG",
+                    "name": "rotation_app (dev)",
+                    "icons": {
+                        "image_32": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png",
+                        "image_48": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png",
+                        "image_64": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png",
+                        "image_72": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png"
+                    },
+                    "is_workflow_app": false
+                },
+                "date_created": 1669925125,
+                "date_updated": 1669929415,
+                "date_deleted": 0,
+                "workflow_id": "Wf04DRMC5PS5"
+            }
+        },
+        {
+            "id": "Ft04DAD7SAUD",
+            "inputs": {
+                "channel": {
+                    "value": "{{data.channel_id}}",
+                    "locked": false,
+                    "hidden": false
+                },
+                "interactivity": {
+                    "value": "{{data.interactivity}}",
+                    "locked": false,
+                    "hidden": false
+                }
+            },
+            "outputs": {
+                "{{event_timestamp}}": {
+                    "type": "string",
+                    "name": "event_timestamp",
+                    "title": "Time when workflow started",
+                    "is_required": false,
+                    "description": "Time when workflow started"
+                },
+                "{{type}}": {
+                    "type": "string",
+                    "name": "type",
+                    "enum": [
+                        "event",
+                        "shortcut",
+                        "webhook",
+                        "scheduled",
+                        "blockkit"
+                    ],
+                    "title": "Trigger type",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "description": "The type of trigger being tripped"
+                },
+                "{{team_id}}": {
+                    "type": "string",
+                    "name": "team_id",
+                    "title": "Team where this workflow was tripped",
+                    "is_required": true,
+                    "description": "Team where this workflow was tripped"
+                },
+                "{{enterprise_id}}": {
+                    "type": "string",
+                    "name": "enterprise_id",
+                    "title": "Organization where this workflow was tripped",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "nullable": true,
+                    "description": "Organization where this workflow was tripped if the team is part of an organization"
+                },
+                "{{data.user_id}}": {
+                    "type": "slack#/types/user_id",
+                    "name": "user_id",
+                    "title": "Person who ran this workflow",
+                    "is_required": true,
+                    "description": "Person who ran this workflow"
+                },
+                "{{data.channel_id}}": {
+                    "type": "slack#/types/channel_id",
+                    "name": "channel_id",
+                    "title": "Channel where the workflow was run",
+                    "is_required": false,
+                    "description": "Channel where the workflow was run, if available"
+                },
+                "{{data.interactivity}}": {
+                    "type": "slack#/types/interactivity",
+                    "name": "interactivity",
+                    "title": "Interactivity context",
+                    "is_required": true,
+                    "description": "Interactivity context",
+                    "is_hidden": true
+                }
+            },
+            "available_data": {
+                "{{event_timestamp}}": {
+                    "type": "string",
+                    "name": "event_timestamp",
+                    "title": "Time when workflow started",
+                    "is_required": false,
+                    "description": "Time when workflow started"
+                },
+                "{{type}}": {
+                    "type": "string",
+                    "name": "type",
+                    "enum": [
+                        "event",
+                        "shortcut",
+                        "webhook",
+                        "scheduled",
+                        "blockkit"
+                    ],
+                    "title": "Trigger type",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "description": "The type of trigger being tripped"
+                },
+                "{{team_id}}": {
+                    "type": "string",
+                    "name": "team_id",
+                    "title": "Team where this workflow was tripped",
+                    "is_required": true,
+                    "description": "Team where this workflow was tripped"
+                },
+                "{{enterprise_id}}": {
+                    "type": "string",
+                    "name": "enterprise_id",
+                    "title": "Organization where this workflow was tripped",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "nullable": true,
+                    "description": "Organization where this workflow was tripped if the team is part of an organization"
+                },
+                "{{data.user_id}}": {
+                    "type": "slack#/types/user_id",
+                    "name": "user_id",
+                    "title": "Person who ran this workflow",
+                    "is_required": true,
+                    "description": "Person who ran this workflow"
+                },
+                "{{data.channel_id}}": {
+                    "type": "slack#/types/channel_id",
+                    "name": "channel_id",
+                    "title": "Channel where the workflow was run",
+                    "is_required": false,
+                    "description": "Channel where the workflow was run, if available"
+                },
+                "{{data.interactivity}}": {
+                    "type": "slack#/types/interactivity",
+                    "name": "interactivity",
+                    "title": "Interactivity context",
+                    "is_required": true,
+                    "description": "Interactivity context",
+                    "is_hidden": true
+                }
+            },
+            "date_created": 1669928411,
+            "date_updated": 1669928411,
+            "type": "shortcut",
+            "name": "Read trigger",
+            "description": "Read your triggers",
+            "shortcut_url": "https://slack.com/shortcuts/Ft04DAD7SAUD/cbeb5c497a3226a359bc86696ede1e03",
+            "workflow": {
+                "id": "Fn04E32CJWAU",
+                "callback_id": "read_workflow",
+                "title": "read workflow",
+                "description": "read the triggers",
+                "type": "workflow",
+                "input_parameters": [],
+                "output_parameters": [],
+                "app_id": "A04D62HNCKG",
+                "app": {
+                    "id": "A04D62HNCKG",
+                    "name": "rotation_app (dev)",
+                    "icons": {
+                        "image_32": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png",
+                        "image_48": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png",
+                        "image_64": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png",
+                        "image_72": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png"
+                    },
+                    "is_workflow_app": false
+                },
+                "date_created": 1669928277,
+                "date_updated": 1669929415,
+                "date_deleted": 0,
+                "workflow_id": "Wf04DDB4HH7C"
+            }
+        },
+        {
+            "id": "Ft04DD2VRW74",
+            "inputs": {
+                "channel": {
+                    "value": "{{data.channel_id}}",
+                    "locked": false,
+                    "hidden": false
+                },
+                "interactivity": {
+                    "value": "{{data.interactivity}}",
+                    "locked": false,
+                    "hidden": false
+                }
+            },
+            "outputs": {
+                "{{event_timestamp}}": {
+                    "type": "string",
+                    "name": "event_timestamp",
+                    "title": "Time when workflow started",
+                    "is_required": false,
+                    "description": "Time when workflow started"
+                },
+                "{{type}}": {
+                    "type": "string",
+                    "name": "type",
+                    "enum": [
+                        "event",
+                        "shortcut",
+                        "webhook",
+                        "scheduled",
+                        "blockkit"
+                    ],
+                    "title": "Trigger type",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "description": "The type of trigger being tripped"
+                },
+                "{{team_id}}": {
+                    "type": "string",
+                    "name": "team_id",
+                    "title": "Team where this workflow was tripped",
+                    "is_required": true,
+                    "description": "Team where this workflow was tripped"
+                },
+                "{{enterprise_id}}": {
+                    "type": "string",
+                    "name": "enterprise_id",
+                    "title": "Organization where this workflow was tripped",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "nullable": true,
+                    "description": "Organization where this workflow was tripped if the team is part of an organization"
+                },
+                "{{data.user_id}}": {
+                    "type": "slack#/types/user_id",
+                    "name": "user_id",
+                    "title": "Person who ran this workflow",
+                    "is_required": true,
+                    "description": "Person who ran this workflow"
+                },
+                "{{data.channel_id}}": {
+                    "type": "slack#/types/channel_id",
+                    "name": "channel_id",
+                    "title": "Channel where the workflow was run",
+                    "is_required": false,
+                    "description": "Channel where the workflow was run, if available"
+                },
+                "{{data.interactivity}}": {
+                    "type": "slack#/types/interactivity",
+                    "name": "interactivity",
+                    "title": "Interactivity context",
+                    "is_required": true,
+                    "description": "Interactivity context",
+                    "is_hidden": true
+                }
+            },
+            "available_data": {
+                "{{event_timestamp}}": {
+                    "type": "string",
+                    "name": "event_timestamp",
+                    "title": "Time when workflow started",
+                    "is_required": false,
+                    "description": "Time when workflow started"
+                },
+                "{{type}}": {
+                    "type": "string",
+                    "name": "type",
+                    "enum": [
+                        "event",
+                        "shortcut",
+                        "webhook",
+                        "scheduled",
+                        "blockkit"
+                    ],
+                    "title": "Trigger type",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "description": "The type of trigger being tripped"
+                },
+                "{{team_id}}": {
+                    "type": "string",
+                    "name": "team_id",
+                    "title": "Team where this workflow was tripped",
+                    "is_required": true,
+                    "description": "Team where this workflow was tripped"
+                },
+                "{{enterprise_id}}": {
+                    "type": "string",
+                    "name": "enterprise_id",
+                    "title": "Organization where this workflow was tripped",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "nullable": true,
+                    "description": "Organization where this workflow was tripped if the team is part of an organization"
+                },
+                "{{data.user_id}}": {
+                    "type": "slack#/types/user_id",
+                    "name": "user_id",
+                    "title": "Person who ran this workflow",
+                    "is_required": true,
+                    "description": "Person who ran this workflow"
+                },
+                "{{data.channel_id}}": {
+                    "type": "slack#/types/channel_id",
+                    "name": "channel_id",
+                    "title": "Channel where the workflow was run",
+                    "is_required": false,
+                    "description": "Channel where the workflow was run, if available"
+                },
+                "{{data.interactivity}}": {
+                    "type": "slack#/types/interactivity",
+                    "name": "interactivity",
+                    "title": "Interactivity context",
+                    "is_required": true,
+                    "description": "Interactivity context",
+                    "is_hidden": true
+                }
+            },
+            "date_created": 1669925230,
+            "date_updated": 1669925230,
+            "type": "shortcut",
+            "name": "Setup trigger",
+            "description": "Setup a rotation",
+            "shortcut_url": "https://slack.com/shortcuts/Ft04DD2VRW74/1feddaf118e93d6b543ebf3ad5ebff97",
+            "workflow": {
+                "id": "Fn04DFG2GRM2",
+                "callback_id": "setup_workflow",
+                "title": "setup workflow",
+                "description": "Set up a rotation in a channel",
+                "type": "workflow",
+                "input_parameters": [
+                    {
+                        "type": "slack#/types/interactivity",
+                        "name": "interactivity",
+                        "title": "Interactivity",
+                        "is_required": true
+                    },
+                    {
+                        "type": "slack#/types/channel_id",
+                        "name": "channel",
+                        "title": "Channel",
+                        "is_required": false
+                    }
+                ],
+                "output_parameters": [],
+                "app_id": "A04D62HNCKG",
+                "app": {
+                    "id": "A04D62HNCKG",
+                    "name": "rotation_app (dev)",
+                    "icons": {
+                        "image_32": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png",
+                        "image_48": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png",
+                        "image_64": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png",
+                        "image_72": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png"
+                    },
+                    "is_workflow_app": false
+                },
+                "date_created": 1669925125,
+                "date_updated": 1669929415,
+                "date_deleted": 0,
+                "workflow_id": "Wf04E2P7KJBA"
+            }
+        },
+        {
+            "id": "Ft04DFKVB67N",
+            "inputs": {
+                "interactivity": {
+                    "value": "{{data.interactivity}}",
+                    "locked": false,
+                    "hidden": false
+                }
+            },
+            "outputs": {
+                "{{event_timestamp}}": {
+                    "type": "string",
+                    "name": "event_timestamp",
+                    "title": "Time when workflow started",
+                    "is_required": false,
+                    "description": "Time when workflow started"
+                },
+                "{{type}}": {
+                    "type": "string",
+                    "name": "type",
+                    "enum": [
+                        "event",
+                        "shortcut",
+                        "webhook",
+                        "scheduled",
+                        "blockkit"
+                    ],
+                    "title": "Trigger type",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "description": "The type of trigger being tripped"
+                },
+                "{{team_id}}": {
+                    "type": "string",
+                    "name": "team_id",
+                    "title": "Team where this workflow was tripped",
+                    "is_required": true,
+                    "description": "Team where this workflow was tripped"
+                },
+                "{{enterprise_id}}": {
+                    "type": "string",
+                    "name": "enterprise_id",
+                    "title": "Organization where this workflow was tripped",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "nullable": true,
+                    "description": "Organization where this workflow was tripped if the team is part of an organization"
+                }
+            },
+            "available_data": {
+                "{{event_timestamp}}": {
+                    "type": "string",
+                    "name": "event_timestamp",
+                    "title": "Time when workflow started",
+                    "is_required": false,
+                    "description": "Time when workflow started"
+                },
+                "{{type}}": {
+                    "type": "string",
+                    "name": "type",
+                    "enum": [
+                        "event",
+                        "shortcut",
+                        "webhook",
+                        "scheduled",
+                        "blockkit"
+                    ],
+                    "title": "Trigger type",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "description": "The type of trigger being tripped"
+                },
+                "{{team_id}}": {
+                    "type": "string",
+                    "name": "team_id",
+                    "title": "Team where this workflow was tripped",
+                    "is_required": true,
+                    "description": "Team where this workflow was tripped"
+                },
+                "{{enterprise_id}}": {
+                    "type": "string",
+                    "name": "enterprise_id",
+                    "title": "Organization where this workflow was tripped",
+                    "is_required": true,
+                    "is_hidden": true,
+                    "nullable": true,
+                    "description": "Organization where this workflow was tripped if the team is part of an organization"
+                }
+            },
+            "date_created": 1669926525,
+            "date_updated": 1669926525,
+            "type": "scheduled",
+            "schedule": {
+                "start_time": "2022-12-01T20:28:47Z",
+                "timezone": "GMT",
+                "frequency": {
+                    "type": "daily",
+                    "repeats_every": 1440
+                }
+            },
+            "name": "trigger rotate function",
+            "description": "",
+            "workflow": {
+                "id": "Fn04DA45JG3F",
+                "callback_id": "rotate_workflow",
+                "title": "rotate workflow",
+                "description": "workflow to rotate the current user",
+                "type": "workflow",
+                "input_parameters": [],
+                "output_parameters": [],
+                "app_id": "A04D62HNCKG",
+                "app": {
+                    "id": "A04D62HNCKG",
+                    "name": "rotation_app (dev)",
+                    "icons": {
+                        "image_32": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png",
+                        "image_48": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png",
+                        "image_64": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png",
+                        "image_72": "https://a.slack-edge.com/80588/img/apps/default_new_app_icon.png"
+                    },
+                    "is_workflow_app": false
+                },
+                "date_created": 1669925125,
+                "date_updated": 1669929415,
+                "date_deleted": 0,
+                "workflow_id": "Wf04DRMC5PS5"
+            }
+        }
+    ],
+    "response_metadata": {
+        "next_cursor": ""
+    }
+}
